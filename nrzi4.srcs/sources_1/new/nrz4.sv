@@ -1,30 +1,41 @@
-`timescale 1ns / 1ps
 module nrz4(
-    input logic [3:0] D_i,
-    input logic mod,
+    input  logic [3:0] D_i,
+    input  logic       mod,
     output logic [3:0] D_o
-    );
+);
     logic last_bit;
-    
-    always @(*) begin
-    last_bit <= 1'b0;
-    D_o <= 4'b0000;
-    
-       if(!mod)
-        for(int i=0; i < 4; i++) begin
-            if (D_i[i])
-                    last_bit = ~last_bit;
-            D_o[i] = last_bit;
-        end         
-    else
-        for (int i = 0; i < 4; i++) begin
-            if (D_i[i] != last_bit)
-                D_o[i] = 1'b1;
-            else
-                D_o[i] = 1'b0;
-                last_bit = D_i[i]; 
-    end
+
+    always_comb begin
+        last_bit = 1'b0;
+        case (mod)
+            1'b0: begin // NRZ-I
+                if (D_i[0]) last_bit = ~last_bit;
+                D_o[0] = last_bit;
+
+                if (D_i[1]) last_bit = ~last_bit;
+                D_o[1] = last_bit;
+
+                if (D_i[2]) last_bit = ~last_bit;
+                D_o[2] = last_bit;
+
+                if (D_i[3]) last_bit = ~last_bit;
+                D_o[3] = last_bit;
+            end
+
+            1'b1: begin // Decodare NRZ-I
+                D_o[0] = (D_i[0] != last_bit);
+                last_bit = D_i[0];
+
+                D_o[1] = (D_i[1] != last_bit);
+                last_bit = D_i[1];
+
+                D_o[2] = (D_i[2] != last_bit);
+                last_bit = D_i[2];
+
+                D_o[3] = (D_i[3] != last_bit);
+                last_bit = D_i[3];
+            end
+        endcase
     end
 
 endmodule
-
