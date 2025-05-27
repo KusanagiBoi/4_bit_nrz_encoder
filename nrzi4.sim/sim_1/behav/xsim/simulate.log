@@ -1,0 +1,14 @@
+Time resolution is 1 ps
+==== Test NRZ-I Encoder ====
+Input 0000 | mod = 0 | D_i = 0000 | D_o = 0000
+Input 0001 | mod = 0 | D_i = 0001 | D_o = 1111
+Input 0011 | mod = 0 | D_i = 0011 | D_o = 0001
+Input 1111 | mod = 0 | D_i = 1111 | D_o = 0101
+Input 1010 | mod = 0 | D_i = 1010 | D_o = 0110
+==== Test NRZ-I Decoder ====
+Input 0000 | mod = 1 | D_i = 0000 | D_o = 0000
+Input 0001 | mod = 1 | D_i = 0001 | D_o = 0011
+Input 0101 | mod = 1 | D_i = 0101 | D_o = 1111
+Input 1111 | mod = 1 | D_i = 1111 | D_o = 0001
+Input 1010 | mod = 1 | D_i = 1010 | D_o = 1110
+$finish called at time : 10 ns : File "C:/SLP/4_bit_nrz_encoder/nrzi4.srcs/sim_1/new/test.sv" Line 41
