@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1748375859" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/nrzi4b.dcp">
-  <File Type="PA-TCL" Name="nrz4.tcl"/>
   <File Type="REPORTS-TCL" Name="nrz4_reports.tcl"/>
-  <File Type="RDS-RDS" Name="nrz4.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="nrz4_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="nrz4_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="nrz4_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="nrz4.tcl"/>
+  <File Type="RDS-RDS" Name="nrz4.vds"/>
   <File Type="RDS-DCP" Name="nrz4.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="nrz4_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="nrz4_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/nrz4.sv">

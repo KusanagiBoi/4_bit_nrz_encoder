@@ -2,19 +2,16 @@
 
 module nrz4_tb;
 
-    // Semnale test
     logic [3:0] D_i;
     logic       mod;
     logic [3:0] D_o;
 
-    // Instanțiere modul testat
     nrz4 dut (
         .D_i(D_i),
         .mod(mod),
         .D_o(D_o)
     );
 
-    // Task pentru afișare
     task print_state(input string msg);
         $display("%s | mod = %0b | D_i = %b | D_o = %b", msg, mod, D_i, D_o);
     endtask
