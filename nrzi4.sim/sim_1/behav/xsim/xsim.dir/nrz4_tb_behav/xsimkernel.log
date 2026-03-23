@@ -1,7 +1,0 @@
-Running: xsim.dir/nrz4_tb_behav/xsimk.exe -simmode gui -wdb nrz4_tb_behav.wdb -simrunnum 0 -socket 65319
-Design successfully loaded
-Design Loading Memory Usage: 26508 KB (Peak: 26508 KB)
-Design Loading CPU Usage: 717 ms
-Simulation completed
-Simulation Memory Usage: 28308 KB (Peak: 28308 KB)
-Simulation CPU Usage: 749 ms
